@@ -1,1 +1,11 @@
-hellooooo
+FROM python:3.13.2-slim
+WORKDIR /app
+COPY p.py /app
+CMD ["python","p.py"]
+
+
+FROM openjdk:21
+WORKDIR /app
+COPY sample1.java /app/demo/sample1.java
+RUN javac /app/demo/sample1.java
+CMD ["java","Demo.sample1"]
